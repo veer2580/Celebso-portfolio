@@ -109,7 +109,7 @@ export function Hero() {
   className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-8"
 >
   <span className="text-white">
-    Building  <br className="hidden md:block" />
+    Building The Future of <br className="hidden md:block" />
   </span>
 
   {/* Yellow left-to-right reveal */}
