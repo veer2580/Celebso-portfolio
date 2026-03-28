@@ -3,18 +3,18 @@
 
 export default function Gallery() {
  const images = [
-  "/gallery/iamge08.jpeg",
-  "/gallery/image01.jpeg",
-  "/gallery/image02.jpeg",
-  "/gallery/image09.jpeg",
-  "/gallery/image7.jpeg",
-  "/gallery/image10.jpeg",
-  "/gallery/image11.jpeg",
-  "/gallery/image12.jpeg",
-  "/gallery/image13.jpeg",
-  "/gallery/image03.jpeg",
-  "/gallery/image06.jpeg",
-   "/gallery/image04.jpeg",
+  "/gallery-assets/iamge08.jpeg",
+  "/gallery-assets/image01.jpeg",
+  "/gallery-assets/image02.jpeg",
+  "/gallery-assets/image09.jpeg",
+  "/gallery-assets/image7.jpeg",
+  "/gallery-assets/image10.jpeg",
+  "/gallery-assets/image11.jpeg",
+  "/gallery-assets/image12.jpeg",
+  "/gallery-assets/image13.jpeg",
+  "/gallery-assets/image03.jpeg",
+  "/gallery-assets/image06.jpeg",
+   "/gallery-assets/image04.jpeg",
 
 ];
 
