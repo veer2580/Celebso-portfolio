@@ -11,16 +11,15 @@ import { Layout } from "./components/Layout";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Gallery from "./pages/GalleryPage";
-
-
 import Marketing from "./pages/Marketing";
 import Technology from "./pages/Technology";
 import Projects from "./pages/Projects";
 import Team from "./pages/Team";
 import { ScrollToTop } from "./components/ScrollToTop";
 
-
-
+// ✅ new pages
+import { PrivacyPolicy } from "./pages/PrivacyPolicy";
+import { TermsAndConditions } from "./pages/TermsAndConditions";
 
 const queryClient = new QueryClient();
 
@@ -30,27 +29,30 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        
+
         <BrowserRouter>
-  <ScrollToTop />
+          <ScrollToTop />
 
-  <Routes>
-    <Route element={<Layout />}>
+          <Routes>
+            <Route element={<Layout />}>
+              <Route path="/" element={<Index />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/marketing" element={<Marketing />} />
+              <Route path="/technology" element={<Technology />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/team" element={<Team />} />
 
-      <Route path="/" element={<Index />} />
-      <Route path="/gallery" element={<Gallery />} />
-      <Route path="/marketing" element={<Marketing />} />
-      <Route path="/technology" element={<Technology />} />
-      <Route path="/projects" element={<Projects />} />
-      <Route path="/team" element={<Team />} />
+              {/* ✅ legal pages */}
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route
+                path="/terms-and-conditions"
+                element={<TermsAndConditions />}
+              />
 
-      <Route path="*" element={<NotFound />} />
-
-    </Route>
-  </Routes>
-
-</BrowserRouter>
-
+              <Route path="*" element={<NotFound />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
       </TooltipProvider>
     </ThemeProvider>
   </QueryClientProvider>

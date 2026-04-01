@@ -1,13 +1,16 @@
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
+import image14 from "../../assets/bablu.jpeg";
+import image15 from "../../assets/aryan.jpeg";
+import image16 from "../../assets/preeti.jpeg";
 
 export function MarketingTeam() {
   const team = {
     name: "Marketing & Growth Team",
     members: [
-      { name: "James Bond", role: "Growth Lead", image: "https://images.pexels.com/photos/1212984/pexels-photo-1212984.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
-      { name: "Linda Gray", role: "SEO Strategist", image: "https://images.pexels.com/photos/1181424/pexels-photo-1181424.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
-      { name: "Michael Scott", role: "Content Director", image: "https://images.pexels.com/photos/1680172/pexels-photo-1680172.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
+       { name: "Bablu Kumar", role: "Senior Marketing Head", image: image14 },
+        { name: "Aryan", role: "Influencing Marketing Head", image: image15 },
+        { name: "Preeti", role: "Outdor Marketing Head", image: image16 },
       { name: "Sophie Brown", role: "Social Ads Expert", image: "https://images.pexels.com/photos/712513/pexels-photo-712513.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
       { name: "Ava Miller", role: "Marketing Analyst", image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
     ]

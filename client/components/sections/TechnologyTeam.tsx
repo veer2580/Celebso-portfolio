@@ -8,6 +8,8 @@ import image9 from "../../assets/ashish.png";
 import image7 from "../../assets/harshwardhan.png";
 import image8 from "../../assets/anurag.png";
 import image10 from "../../assets/tulsi.png";
+import image13 from "../../assets/arti.jpeg";
+import image14 from "../../assets/asaram.png";
 
 
 
@@ -15,17 +17,18 @@ export function TechnologyTeam() {
   const team = {
     name: "Technology Team",
     members: [
+      { name: "Arti Acharya", role: "Senior Product Head", image: image13 },
+       { name: "Asaram", role: " Senior Developer", image: image14},
       { name: "Sudhanshu", role: "Senior Tech Lead", image: image12 },
-        { name: "Asaram", role: " Senior Developer", image: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
         { name: "Harshvardhan", role: "Full Stack Developer", image:image7 },
-        { name: "Radha Pandey", role: "Frontend Developer", image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
+        // { name: "Radha Pandey", role: "Frontend Developer", image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
         { name: "Tushar Prasad", role: "Full Stack Developer", image: "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
         {name : "Anurag Sen", role : "Frontend Developer",image: image8 },
         {name : "Ashish" , role : "Full Stack Developer" , image :image9},
         { name : "Ayatullah Qamar",role : "Data Analytics" , image : image6},
         {name : "Anshu Singh",role : " Full Stack Developer", image: image5},
         { name: "Arpan", role: "Senior Developer", image:image11},
-        { name: "Tulshi Prasad Pandey", role: " Full Stack Developer",image: image10},
+        // { name: "Tulshi Prasad Pandey", role: " Full Stack Developer",image: image10},
     ]
   };
 

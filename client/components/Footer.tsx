@@ -7,20 +7,21 @@ export function Footer() {
   const hideMenus =
     location.pathname === "/technology" ||
     location.pathname === "/marketing" ||
-    location.pathname === "/projects"  ||
-  location.pathname === "/gallery"
+    location.pathname === "/projects" ||
+    location.pathname === "/gallery";
 
   return (
     <footer className="bg-background border-t border-white/5 pt-2 pb-10 px-6">
-      <div className={`max-w-7xl mx-auto grid gap-12 ${hideMenus ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 md:grid-cols-4"
-        }`}>
-
-
-        {/* Left block (always visible) */}
+      <div
+        className={`max-w-7xl mx-auto grid gap-12 ${
+          hideMenus ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1 md:grid-cols-4"
+        }`}
+      >
+        {/* Left block */}
         <div className="col-span-1 md:col-span-2">
           <Link to="/" className="flex items-center gap-2 mb-6">
             <span className="text-xl font-bold tracking-tighter text-foreground">
-
+              Tech Celebso
             </span>
           </Link>
 
@@ -57,30 +58,25 @@ export function Footer() {
           </div>
         </div>
 
-        {/* 👉 Only hide these two blocks on technology / marketing / projects */}
         {!hideMenus && (
           <>
             <div>
               <h3 className="font-bold mb-6">Departments</h3>
               <ul className="space-y-4">
                 <li>
-                  <a href="#technology" className="text-foreground/60 hover:text-primary text-sm">
+                  <a
+                    href="#technology"
+                    className="text-foreground/60 hover:text-primary text-sm"
+                  >
                     Technology
                   </a>
                 </li>
                 <li>
-                  <a href="#marketing" className="text-foreground/60 hover:text-primary text-sm">
+                  <a
+                    href="#marketing"
+                    className="text-foreground/60 hover:text-primary text-sm"
+                  >
                     Marketing & Growth
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-foreground/60 hover:text-primary text-sm">
-                    AI Automation
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-foreground/60 hover:text-primary text-sm">
-                    Cloud Infrastructure
                   </a>
                 </li>
               </ul>
@@ -90,22 +86,26 @@ export function Footer() {
               <h3 className="font-bold mb-6">Company</h3>
               <ul className="space-y-4">
                 <li>
-                  <a href="#projects" className="text-foreground/60 hover:text-primary text-sm">
+                  <a
+                    href="#projects"
+                    className="text-foreground/60 hover:text-primary text-sm"
+                  >
                     Projects
                   </a>
                 </li>
                 <li>
-                  <a href="#team" className="text-foreground/60 hover:text-primary text-sm">
+                  <a
+                    href="#team"
+                    className="text-foreground/60 hover:text-primary text-sm"
+                  >
                     Our Team
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-foreground/60 hover:text-primary text-sm">
-                    Careers
-                  </a>
-                </li>
-                <li>
-                  <a href="#contact" className="text-foreground/60 hover:text-primary text-sm">
+                  <a
+                    href="#contact"
+                    className="text-foreground/60 hover:text-primary text-sm"
+                  >
                     Contact Us
                   </a>
                 </li>
@@ -115,28 +115,27 @@ export function Footer() {
         )}
       </div>
 
-      {/* ✅ This line will stay on EVERY page */}
+      {/* Bottom line */}
       <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-white/5 text-center">
         <p className="text-xs text-foreground/40 mb-3">
           © 2025 Tech Celebso. All rights reserved.
         </p>
 
-        <div className="flex justify-center gap-6">
-          <a
-            href="#"
-            className="text-xs text-foreground/40 hover:text-foreground"
+        <div className="flex justify-center gap-6 flex-wrap">
+          <Link
+            to="/privacy-policy"
+            className="text-xs text-foreground/40 hover:text-foreground transition-colors"
           >
             Privacy Policy
-          </a>
-          <a
-            href="#"
-            className="text-xs text-foreground/40 hover:text-foreground"
+          </Link>
+          <Link
+            to="/terms-and-conditions"
+            className="text-xs text-foreground/40 hover:text-foreground transition-colors"
           >
-            Terms of Service
-          </a>
+            Terms & Conditions
+          </Link>
         </div>
       </div>
-
     </footer>
   );
 }

@@ -4,7 +4,7 @@ import { Moon, Sun, Menu, X, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo2.png";
 
 import {
   DropdownMenu,
@@ -39,9 +39,12 @@ export function Navbar() {
   const celebsoGroups = [
     "Tech Celebso",
     "Celebso Social Network",
-    "Celebso Venture",
-    "Celebso Startup Valley",
     "Celebso Production",
+    "Celebso Venture",
+    "Personal Seek.AI",
+    "Celebso Startup School",
+    "Celebso Startup Valley",
+    "ScanCartGo.com",
     "Space Rentiya",
   ];
 
@@ -55,7 +58,7 @@ export function Navbar() {
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        
+
         {/* LOGO */}
         <Link
           to="/"
@@ -64,18 +67,22 @@ export function Navbar() {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }
           }}
-          className="flex items-center gap-2"
+          className="flex items-center gap-0 leading-none"
         >
+          <span className="text-4xl md:text-3xl font-black text-white tracking-tight leading-none z-10">
+            
+          </span>
           <img
             src={logo}
             alt="CELEBSO"
-            className="h-14 md:h-20 object-contain"
+           className="w-auto object-contain"
+style={{ height: "68px", transform: "scale(4.2)", transformOrigin: "left center" }}
           />
         </Link>
 
         {/* DESKTOP NAV */}
         <div className="hidden md:flex items-center gap-8">
-          
+
           {/* DROPDOWN */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -131,9 +138,11 @@ export function Navbar() {
           </Button>
 
           {/* CTA BUTTON */}
-          <Button className="rounded-full px-6 bg-yellow-400 hover:bg-yellow-500 text-black shadow-lg shadow-yellow-500/20 transition-all duration-300">
-            Get Started
-          </Button>
+          <Link to="/">
+            <Button className="rounded-full px-6 bg-yellow-400 hover:bg-yellow-500 text-black shadow-lg shadow-yellow-500/20 transition-all duration-300">
+              Get Started
+            </Button>
+          </Link>
         </div>
 
         {/* MOBILE TOGGLE */}
@@ -199,9 +208,11 @@ export function Navbar() {
               </Link>
             ))}
 
-            <Button className="w-full mt-2 bg-yellow-400 hover:bg-yellow-500 text-black shadow-lg shadow-yellow-500/20 transition-all duration-300">
-              Get Started
-            </Button>
+            <Link to="/" onClick={() => setMobileMenuOpen(false)}>
+              <Button className="w-full mt-2 bg-yellow-400 hover:bg-yellow-500 text-black shadow-lg shadow-yellow-500/20 transition-all duration-300">
+                Get Started
+              </Button>
+            </Link>
           </div>
         </div>
       )}

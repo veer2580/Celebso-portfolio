@@ -177,7 +177,7 @@ export function Projects() {
           </div>
         </div>
 
-        <motion.div
+       <motion.div
           layout
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
@@ -187,6 +187,20 @@ export function Projects() {
             ))}
           </AnimatePresence>
         </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="flex justify-center mt-14"
+        >
+          <button className="group relative px-10 py-4 rounded-full font-bold text-black bg-yellow-400 border-2 border-yellow-400 shadow-lg shadow-yellow-400/30 transition-all duration-300 hover:bg-transparent hover:text-yellow-400 hover:shadow-yellow-400/50 hover:scale-105 text-base tracking-wide">
+            View More Projects
+            <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+          </button>
+        </motion.div>
+
       </div>
     </section>
   );

@@ -14,6 +14,11 @@ import image9 from "../../assets/ashish.png";
 import image10 from "../../assets/tulsi.png";
 import image11 from "../../assets/arpan.jpeg";
 import image12 from "../../assets/sudhanshu.jpeg";
+import image13 from "../../assets/arti.jpeg";
+import image14 from "../../assets/bablu.jpeg";
+import image15 from "../../assets/aryan.jpeg";
+import image16 from "../../assets/preeti.jpeg";
+import image17 from "../../assets/asaram.png";
 
 
 
@@ -54,26 +59,27 @@ export function Teams() {
     {
       name: "Technology Team",
       members: [
-
+         { name: "Arti Acharya", role: "Senior Product Head", image: image13 },
+          { name: "Asaram", role: " Senior Developer", image: image17},
         { name: "Sudhanshu", role: "Senior Tech Lead", image: image12 },
         { name: "Arpan", role: "Senior Developer", image:image11},
-        { name: "Asaram", role: " Senior Developer", image: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
+       
         { name: "Harshvardhan", role: "Full Stack Developer", image: image7 },
-        { name: "Radha Pandey", role: "Frontend Developer", image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
+        // { name: "Radha Pandey", role: "Frontend Developer", image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
         { name: "Tushar Prasad", role: "Full Stack Developer", image: "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
         { name: "Anurag Sen", role: "Frontend Developer", image: image8 },
         { name: "Ashish", role: "Full Stack Developer", image: image9 },
         { name: "Ayatullah Qamar", role: "Data Analytics",image : image6 },
         { name: "Anshu Singh", role: " Full Stack Developer",image: image5 },
-        { name: "Tulshi Prasad Pandey", role: " Full Stack Developer",image: image10},
+        // { name: "Tulshi Prasad Pandey", role: " Full Stack Developer",image: image10},
       ]
     },
     {
       name: "Marketing & Growth Team",
       members: [
-        { name: "James Bond", role: "Growth Lead", image: "https://images.pexels.com/photos/1212984/pexels-photo-1212984.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
-        { name: "Linda Gray", role: "SEO Strategist", image: "https://images.pexels.com/photos/1181424/pexels-photo-1181424.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
-        { name: "Michael Scott", role: "Content Director", image: "https://images.pexels.com/photos/1680172/pexels-photo-1680172.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
+        { name: "Bablu Kumar", role: "Senior Marketing Head", image: image14 },
+        { name: "Aryan", role: "Influencing Marketing Head", image: image15 },
+        { name: "Preeti", role: "Outdor Marketing Head", image: image16 },
         { name: "Sophie Brown", role: "Social Ads Expert", image: "https://images.pexels.com/photos/712513/pexels-photo-712513.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
         { name: "Ava Miller", role: "Marketing Analyst", image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
       ]
