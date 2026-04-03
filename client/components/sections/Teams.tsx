@@ -19,6 +19,8 @@ import image14 from "../../assets/bablu.jpeg";
 import image15 from "../../assets/aryan.jpeg";
 import image16 from "../../assets/preeti.jpeg";
 import image17 from "../../assets/asaram.png";
+import image19 from "../../assets/monu.jpeg";
+import image18 from "../../assets/royal.jpeg";
 
 
 
@@ -38,7 +40,7 @@ export function Teams() {
           role: "Co-Founder & CoO",
           image: image3
         },
-         {
+        {
           name: "Harpreet",
           role: " Operations Director",
           image: image2
@@ -59,18 +61,18 @@ export function Teams() {
     {
       name: "Technology Team",
       members: [
-         { name: "Arti Acharya", role: "Senior Product Head", image: image13 },
-          { name: "Asaram", role: " Senior Developer", image: image17},
+        { name: "Arti Acharya", role: "Senior Product Head", image: image13 },
+        { name: "Asaram", role: " Senior Developer", image: image17 },
         { name: "Sudhanshu", role: "Senior Tech Lead", image: image12 },
-        { name: "Arpan", role: "Senior Developer", image:image11},
-       
+        { name: "Arpan", role: "Senior Developer", image: image11 },
+
         { name: "Harshvardhan", role: "Full Stack Developer", image: image7 },
         // { name: "Radha Pandey", role: "Frontend Developer", image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
         { name: "Tushar Prasad", role: "Full Stack Developer", image: "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
         { name: "Anurag Sen", role: "Frontend Developer", image: image8 },
         { name: "Ashish", role: "Full Stack Developer", image: image9 },
-        { name: "Ayatullah Qamar", role: "Data Analytics",image : image6 },
-        { name: "Anshu Singh", role: " Full Stack Developer",image: image5 },
+        { name: "Ayatullah Qamar", role: "Data Analytics", image: image6 },
+        { name: "Anshu Singh", role: " Full Stack Developer", image: image5 },
         // { name: "Tulshi Prasad Pandey", role: " Full Stack Developer",image: image10},
       ]
     },
@@ -78,12 +80,18 @@ export function Teams() {
       name: "Marketing & Growth Team",
       members: [
         { name: "Bablu Kumar", role: "Senior Marketing Head", image: image14 },
-        { name: "Aryan", role: "Influencing Marketing Head", image: image15 },
-        { name: "Preeti", role: "Outdor Marketing Head", image: image16 },
-        { name: "Sophie Brown", role: "Social Ads Expert", image: "https://images.pexels.com/photos/712513/pexels-photo-712513.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
-        { name: "Ava Miller", role: "Marketing Analyst", image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" },
+        { name: "Preeti", role: "influencing marketing head", image: image16 },
+        { name: "Monu Sharma", role: "Meta ads expert", image: image19 },
+        { name: "Royal Kendra", role: "Outdoor marketing head", image: image18 },
       ]
-    }
+    },
+    {
+      name: "Legal Department",
+      members: [
+        { name: "Aryan", role: "Legal advisor Rajasthan High court", image: image15 },
+      ]
+    },
+
   ];
 
   return (
@@ -121,17 +129,12 @@ export function Teams() {
                           className={cn(
                             "w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110",
                             member.name === "Meena Dhakad" && "object-[70%_10%]",
-
-
                             member.name === "Arti Acharya" && "object-[50%_35%] scale-[1.25]",
-                            
-
+                            member.name === "Aryan" && "object-[50%_20%] scale-[1.2]",
                             member.name !== "Meena Dhakad" &&
                             member.name !== "Arti Acharya" &&
-                            
+                            member.name !== "Aryan" &&
                             "object-center"
-
-
                           )}
                         />
                       </div>

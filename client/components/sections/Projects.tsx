@@ -1,8 +1,20 @@
-import { ExternalLink, Code, BarChart, Smartphone, Globe, Database, Cloud, Activity, Search, Mail, MessageSquare } from "lucide-react";
+import {
+  ExternalLink,
+  Code,
+  BarChart,
+  Smartphone,
+  Globe,
+  Database,
+  Cloud,
+  Activity,
+  Search,
+  Mail,
+  MessageSquare,
+} from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 type ProjectCategory = "technology" | "marketing";
 
@@ -12,11 +24,9 @@ interface Project {
   icon: React.ReactNode;
   image: string;
   tags: string[];
-  link: string; // ⭐ NEW
+  link: string;
   fit?: "cover" | "contain";
-
 }
-
 
 const techProjects: Project[] = [
   {
@@ -26,8 +36,7 @@ const techProjects: Project[] = [
     image: "/project/image03.png",
     tags: ["Web Development", "Brand Website", "UI/UX"],
     link: "https://www.quantumwebframe.com/",
-    fit: "contain"
-
+    fit: "contain",
   },
   {
     title: "Slack Automation Platform",
@@ -35,17 +44,16 @@ const techProjects: Project[] = [
     icon: <Database className="w-5 h-5 text-purple-400" />,
     image: "/project/image09.png",
     tags: ["No-Code", "Slack Bots", "Productivity Tool"],
-    link: "https://appsally.cloud/"
+    link: "https://appsally.cloud/",
   },
   {
     title: "iSoftwareLab Agency Website",
-    category: "Software Development ",
+    category: "Software Development",
     icon: <Cloud className="w-5 h-5 text-cyan-400" />,
     image: "/project/image04.png",
     tags: ["Web Apps", "Mobile Apps", "CRM Systems"],
     link: "https://isoftwarelab.studio/",
-     fit: "contain"
-
+    fit: "contain",
   },
   {
     title: "Decipher Zone Corporate Website",
@@ -54,8 +62,7 @@ const techProjects: Project[] = [
     image: "/project/image08.png",
     tags: ["Enterprise Apps", "Cloud Solutions", "Consulting"],
     link: "https://www.decipherzone.com/",
-     fit: "contain"
-
+    fit: "contain",
   },
   {
     title: "TripAway Journey Travel Website",
@@ -65,10 +72,6 @@ const techProjects: Project[] = [
     tags: ["Booking System", "Tour Packages", "UI/UX"],
     link: "https://tripawayjourney.com/",
     fit: "contain",
-      
-
-    
-
   },
   {
     title: "Brospace Co-Living Platform",
@@ -77,9 +80,28 @@ const techProjects: Project[] = [
     image: "/project/image06.png",
     tags: ["Space Booking", "Marketplace", "Location Based"],
     link: "https://brospace.in/",
-    fit: "contain"
+    fit: "contain",
+  },
 
-  }
+  // ✅ extra projects shown after clicking View More Projects
+  {
+    title: "Celebso Production",
+    category: "Creative & Digital Production",
+    icon: <MessageSquare className="w-5 h-5 text-yellow-400" />,
+    image: "/project/image12.png", // change image if needed
+    tags: ["Production", "Creative Studio", "Digital Media"],
+    link: "https://production.celebso.com/",
+    fit: "contain",
+  },
+  {
+    title: "Celebso Groups",
+    category: "Business Group Platform",
+    icon: <Globe className="w-5 h-5 text-cyan-400" />,
+    image: "/project/image11.png", // change image if needed
+    tags: ["Company Group", "Brand Network", "Platform"],
+    link: "https://group.celebso.com/",
+    fit: "contain",
+  },
 ];
 
 const marketingProjects: Project[] = [
@@ -87,59 +109,80 @@ const marketingProjects: Project[] = [
     title: "B2B Lead Generation Funnel",
     category: "Lead Gen",
     icon: <Search className="w-5 h-5 text-pink-400" />,
-    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800",
+    image:
+      "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800",
     tags: ["Automation", "Salesforce"],
-    link: ""
+    link: "",
   },
   {
     title: "Meta Ads Performance System",
     category: "Paid Ads",
     icon: <Globe className="w-5 h-5 text-blue-500" />,
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=800",
+    image:
+      "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&q=80&w=800",
     tags: ["Facebook API", "Analytics"],
-    link: ""
+    link: "",
   },
   {
     title: "SEO Growth Dashboard",
     category: "SEO",
     icon: <Search className="w-5 h-5 text-cyan-400" />,
-    image: "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=800",
+    image:
+      "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&q=80&w=800",
     tags: ["Organic", "GSC API"],
-    link: ""
+    link: "",
   },
   {
     title: "Influencer Campaign Automation",
     category: "Influencer",
     icon: <Smartphone className="w-5 h-5 text-orange-400" />,
-    image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=800",
+    image:
+      "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=800",
     tags: ["Viral", "Creator CRM"],
-    link: ""
+    link: "",
   },
   {
     title: "Marketing Analytics & Attribution Tool",
     category: "Analytics",
     icon: <BarChart className="w-5 h-5 text-amber-500" />,
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
     tags: ["Mixpanel", "GA4", "SQL"],
-    link: ""
+    link: "",
   },
   {
     title: "Email & WhatsApp Automation System",
     category: "Automation",
     icon: <Mail className="w-5 h-5 text-indigo-400" />,
-    image: "https://images.unsplash.com/photo-1557200134-90327ee9fafa?auto=format&fit=crop&q=80&w=800",
+    image:
+      "https://images.unsplash.com/photo-1557200134-90327ee9fafa?auto=format&fit=crop&q=80&w=800",
     tags: ["SendGrid", "Twilio API"],
-    link: ""
-  }
+    link: "",
+  },
 ];
 
 export function Projects() {
-  const [activeCategory, setActiveCategory] = useState<ProjectCategory>("technology");
+  const [activeCategory, setActiveCategory] =
+    useState<ProjectCategory>("technology");
+  const [showAll, setShowAll] = useState(false);
 
-  const projects = activeCategory === "technology" ? techProjects : marketingProjects;
+  const allProjects =
+    activeCategory === "technology" ? techProjects : marketingProjects;
+
+  const visibleProjects = useMemo(() => {
+    if (showAll) return allProjects;
+    return allProjects.slice(0, 6);
+  }, [allProjects, showAll]);
+
+  const hasMoreProjects = allProjects.length > 6;
+
+  const handleCategoryChange = (category: ProjectCategory) => {
+    setActiveCategory(category);
+    setShowAll(false);
+  };
 
   return (
-    <section className="py-24 px-6 bg-secondary/10 " id="projects">
+    <section className="py-24 px-6 bg-secondary/10" id="projects">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <motion.h2
@@ -153,7 +196,7 @@ export function Projects() {
 
           <div className="flex flex-center justify-center gap-4 mb-12">
             <button
-              onClick={() => setActiveCategory("technology")}
+              onClick={() => handleCategoryChange("technology")}
               className={cn(
                 "px-8 py-3 rounded-full font-bold transition-all border-2",
                 activeCategory === "technology"
@@ -163,8 +206,9 @@ export function Projects() {
             >
               Technology
             </button>
+
             <button
-              onClick={() => setActiveCategory("marketing")}
+              onClick={() => handleCategoryChange("marketing")}
               className={cn(
                 "px-8 py-3 rounded-full font-bold transition-all border-2",
                 activeCategory === "marketing"
@@ -177,36 +221,51 @@ export function Projects() {
           </div>
         </div>
 
-       <motion.div
+        <motion.div
           layout
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           <AnimatePresence mode="popLayout">
-            {projects.map((project, idx) => (
+            {visibleProjects.map((project, idx) => (
               <ProjectCard key={project.title} {...project} index={idx} />
             ))}
           </AnimatePresence>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-          className="flex justify-center mt-14"
-        >
-          <button className="group relative px-10 py-4 rounded-full font-bold text-black bg-yellow-400 border-2 border-yellow-400 shadow-lg shadow-yellow-400/30 transition-all duration-300 hover:bg-transparent hover:text-yellow-400 hover:shadow-yellow-400/50 hover:scale-105 text-base tracking-wide">
-            View More Projects
-            <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
-          </button>
-        </motion.div>
-
+        {hasMoreProjects && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="flex justify-center mt-14"
+          >
+            <button
+              onClick={() => setShowAll((prev) => !prev)}
+              className="group relative px-10 py-4 rounded-full font-bold text-black bg-yellow-400 border-2 border-yellow-400 shadow-lg shadow-yellow-400/30 transition-all duration-300 hover:bg-transparent hover:text-yellow-400 hover:shadow-yellow-400/50 hover:scale-105 text-base tracking-wide"
+            >
+              {showAll ? "Show Less Projects" : "View More Projects"}
+              <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
+            </button>
+          </motion.div>
+        )}
       </div>
     </section>
   );
 }
 
-function ProjectCard({ title, category, icon, image, tags, link, index, fit }: Project & { index: number }) {
+function ProjectCard({
+  title,
+  category,
+  icon,
+  image,
+  tags,
+  link,
+  index,
+  fit,
+}: Project & { index: number }) {
   return (
     <motion.a
       href={link || "#"}
@@ -221,22 +280,17 @@ function ProjectCard({ title, category, icon, image, tags, link, index, fit }: P
       className="group relative rounded-3xl overflow-hidden bg-background border border-white/5 hover:border-primary/30 transition-all duration-500 shadow-xl cursor-pointer block"
     >
       <div className="relative w-full h-[260px] overflow-hidden rounded-t-3xl bg-neutral-900 flex items-center justify-center">
+        <img
+          src={image}
+          alt={title}
+          className={`w-full h-full ${
+            fit === "contain" ? "object-contain p-4" : "object-cover object-top"
+          } transition-transform duration-700 ease-out group-hover:scale-110`}
+          loading="lazy"
+        />
 
-  <img
-    src={image}
-    alt={title}
-    className={`w-full h-full
-      ${fit === "contain"
-        ? "object-contain p-4"
-        : "object-cover object-top"}
-      transition-transform duration-700 ease-out group-hover:scale-110`}
-    loading="lazy"
-  />
-
-  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
-</div>
-
-
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
+      </div>
 
       <div className="p-8">
         <div className="flex items-center justify-between mb-4">
@@ -248,7 +302,7 @@ function ProjectCard({ title, category, icon, image, tags, link, index, fit }: P
           </Badge>
 
           <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-            <ExternalLink className="w-5 h-5 text-primary" />
+            {icon || <ExternalLink className="w-5 h-5 text-primary" />}
           </div>
         </div>
 
@@ -269,5 +323,4 @@ function ProjectCard({ title, category, icon, image, tags, link, index, fit }: P
       </div>
     </motion.a>
   );
-
 }

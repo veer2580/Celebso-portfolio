@@ -100,7 +100,7 @@ export function Hero() {
     {
       title: "Celebso Production",
       desc: "Creative & Digital Production",
-      href: "https://production.celebso.com",
+      href: "https://production.celebso.com/",
     },
     {
       title: "Celebso Venture",
@@ -127,11 +127,11 @@ export function Hero() {
       desc: "Smart Shopping & QR Commerce Platform",
       href: "https://scancartgo.com",
     },
-    {
-      title: "Space Rentiya",
-      desc: "Workspace & Space Rental Platform",
-      href: "https://spacerentiya.com",
-    },
+   {
+  title: "Celebso Group",
+  desc: "Multi-Vertical Business & Innovation Ecosystem",
+  href: "https://group.celebso.com/",
+},
   ];
 
   return (

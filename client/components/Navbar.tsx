@@ -4,7 +4,7 @@ import { Moon, Sun, Menu, X, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
-import logo from "../assets/logo2.png";
+import logo from "../assets/logo7.png";
 
 import {
   DropdownMenu,
@@ -27,15 +27,13 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  /* ---------- NAV LINKS ---------- */
   const navLinks = [
     { name: "Technology", to: "/technology" },
     { name: "Marketing", to: "/marketing" },
     { name: "Projects", to: "/projects" },
-    { name: "Gallery", to: "/gallery" }, // ✅ Added
+    { name: "Gallery", to: "/gallery" },
   ];
 
-  /* ---------- DROPDOWN GROUPS ---------- */
   const celebsoGroups = [
     "Tech Celebso",
     "Celebso Social Network",
@@ -45,20 +43,19 @@ export function Navbar() {
     "Celebso Startup School",
     "Celebso Startup Valley",
     "ScanCartGo.com",
-    "Space Rentiya",
+    "Celebso Group",
   ];
 
   return (
     <nav
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 h-20 flex items-center",
         isScrolled
-          ? "bg-background/80 backdrop-blur-md border-b border-white/5 py-3"
+          ? "bg-background/80 backdrop-blur-md border-b border-white/5"
           : "bg-transparent"
       )}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-
+      <div className="max-w-7xl mx-auto w-full flex items-center justify-between">
         {/* LOGO */}
         <Link
           to="/"
@@ -67,23 +64,17 @@ export function Navbar() {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }
           }}
-          className="flex items-center gap-0 leading-none"
+          className="flex items-center leading-none shrink-0 -ml-2 md:ml-0"
         >
-          <span className="text-4xl md:text-3xl font-black text-white tracking-tight leading-none z-10">
-            
-          </span>
           <img
             src={logo}
             alt="CELEBSO"
-           className="w-auto object-contain"
-style={{ height: "68px", transform: "scale(4.2)", transformOrigin: "left center" }}
+            className="h-8 md:h-10 w-auto object-contain"
           />
         </Link>
 
         {/* DESKTOP NAV */}
         <div className="hidden md:flex items-center gap-8">
-
-          {/* DROPDOWN */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <button className="flex items-center gap-1 text-sm font-medium text-foreground/70 hover:text-yellow-400 transition-colors duration-300 outline-none">
@@ -104,7 +95,6 @@ style={{ height: "68px", transform: "scale(4.2)", transformOrigin: "left center"
             </DropdownMenuContent>
           </DropdownMenu>
 
-          {/* NAV LINKS */}
           {navLinks.map((link) => (
             <Link
               key={link.name}
@@ -123,7 +113,6 @@ style={{ height: "68px", transform: "scale(4.2)", transformOrigin: "left center"
             </Link>
           ))}
 
-          {/* THEME BUTTON */}
           <Button
             variant="ghost"
             size="icon"
@@ -137,7 +126,6 @@ style={{ height: "68px", transform: "scale(4.2)", transformOrigin: "left center"
             )}
           </Button>
 
-          {/* CTA BUTTON */}
           <Link to="/">
             <Button className="rounded-full px-6 bg-yellow-400 hover:bg-yellow-500 text-black shadow-lg shadow-yellow-500/20 transition-all duration-300">
               Get Started
@@ -173,8 +161,6 @@ style={{ height: "68px", transform: "scale(4.2)", transformOrigin: "left center"
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-white/10 animate-in fade-in slide-in-from-top-5">
           <div className="flex flex-col p-6 gap-4">
-
-            {/* DROPDOWN */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <button className="flex items-center text-lg font-medium text-foreground/80 hover:text-primary transition-colors">
@@ -196,7 +182,6 @@ style={{ height: "68px", transform: "scale(4.2)", transformOrigin: "left center"
               </DropdownMenuContent>
             </DropdownMenu>
 
-            {/* MOBILE LINKS */}
             {navLinks.map((link) => (
               <Link
                 key={link.name}
