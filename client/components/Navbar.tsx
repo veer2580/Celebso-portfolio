@@ -44,6 +44,7 @@ export function Navbar() {
     "Celebso Startup Valley",
     "ScanCartGo.com",
     "Celebso Group",
+    "Aveen AI",
   ];
 
   return (
